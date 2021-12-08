@@ -36,7 +36,7 @@ jobs:
       uses: einaregilsson/beanstalk-deploy@v19
       with:
         # AWS Access Key
-        aws_access_key: ${{ secrets.AWS_API_KEY }}
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
         # AWS Secret Key
         aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
         # AWS Region
