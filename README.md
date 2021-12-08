@@ -23,7 +23,6 @@ You need to have installed:
 
 You can use the editor of your choice to work with the repository. [VS Code](https://code.visualstudio.com) is recommended with the [Ionide](http://ionide.io) extension for F# development but the template will also work just fine with [Visual Studio](https://visualstudio.microsoft.com/vs/), [Rider](https://www.jetbrains.com/rider) or [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac) if you prefer to work with any of those.
 
-
 ### Running The Application
 
 To work with and develop the application, you need to both the server and the client project running at the same time. The server application is in the `server` directory and the client is in `client` directory. To run them both, simply open two shell tabs, each for either applications then:
