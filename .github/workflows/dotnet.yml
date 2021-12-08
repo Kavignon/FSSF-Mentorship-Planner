@@ -44,7 +44,7 @@ jobs:
         # Beanstalk environment name. If empty a version will be created but not deployed anywhere.
         environment_name: Fssfplanner-env
         # Version label for new Beanstalk version
-        version_label: 1.0.0
+        version_label: 1.0.9
         # Version description for the new Beanstalk version
         version_description: ${{github.SHA}}
         deployment_package: dist.zip
