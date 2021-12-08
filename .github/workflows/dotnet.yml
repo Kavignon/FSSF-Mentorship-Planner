@@ -1,0 +1,50 @@
+name: Validate .NET solution
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.x
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '12'
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Install NPM dependencies
+      run: npm install
+    - name: Package server and client into dist folder
+      run: ./build.sh Pack
+    - name: Compress dist folder into archive
+      run: zip -r dist.zip dist
+    - name: Beanstalk Deploy
+      uses: einaregilsson/beanstalk-deploy@v19
+      with:
+        # AWS Access Key
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
+        # AWS Secret Key
+        aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
+        # AWS Region
+        region: us-east-2
+        # Beanstalk application name
+        application_name: FSSF_Planner
+        # Beanstalk environment name. If empty a version will be created but not deployed anywhere.
+        environment_name: Fssfplanner-env
+        # Version label for new Beanstalk version
+        version_label: 1.0.0
+        # Version description for the new Beanstalk version
+        version_description: ${{github.SHA}}
+        deployment_package: dist.zip
