@@ -40,7 +40,7 @@ jobs:
         # AWS Secret Key
         aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
         # AWS Region
-        region: ${{ secrets.AWS_REGION }}
+        region: us-east-2
         # Beanstalk application name
         application_name: FSSF Mentorship Organizer
         # Beanstalk environment name. If empty a version will be created but not deployed anywhere.
