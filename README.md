@@ -1,4 +1,6 @@
-# Simplified SAFE Stack
+# Simplified SAFE Stack 
+
+[![Validate .NET solution](https://github.com/Kavignon/FSSF-Mentorship-Planner/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/Kavignon/FSSF-Mentorship-Planner/actions/workflows/dotnet.yml)
 
 A lightweight alternative template to the full-fledged official [SAFE Template](https://github.com/SAFE-Stack/SAFE-template). Lowers the entry barrier by choosing the simplest possible opinionated defaults:
  - Nuget for package management
