@@ -34,11 +34,11 @@ jobs:
       uses: einaregilsson/beanstalk-deploy@v19
       with:
         # AWS Access Key
-        aws_access_key: ${{ Production.AWS_API_KEY }}
+        aws_access_key: ${{ secrets.AWS_API_KEY }}
         # AWS Secret Key
-        aws_secret_key: ${{ Production.AWS_SECRET_KEY }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
         # AWS Region
-        region: ${{ Production.AWS_REGION }}
+        region: ${{ secrets.AWS_REGION }}
         # Beanstalk application name
         application_name: FSSF Mentorship Organizer
         # Beanstalk environment name. If empty a version will be created but not deployed anywhere.
