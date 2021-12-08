@@ -27,7 +27,9 @@ jobs:
     - name: Install NPM dependencies
       run: npm install
     - name: Package server and client into dist folder
-      run: ./build.sh Pack
+      run: |
+        chmod +x build.sh
+        ./build.sh Pack
     - name: Compress dist folder into archive
       run: zip -r dist.zip dist
     - name: Beanstalk Deploy
